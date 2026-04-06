@@ -7,10 +7,10 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 const crops = [
   { category: "Spices", name: "Premium Ginger", img: "https://images.unsplash.com/photo-1615486171448-4fd325409957?w=600&q=80" },
   { category: "Spices", name: "Scotch Bonnet", img: "https://images.unsplash.com/photo-1588047915570-388f61536b58?w=600&q=80" },
-  { category: "Fruits", name: "Sri Lankan Red Banana", img: "https://images.unsplash.com/photo-1571141380069-422f28b40bb2?w=600&q=80" },
-  { category: "Fruits", name: "Passion Fruit", img: "https://images.unsplash.com/photo-1601366533036-74fc2e1e3e7f?w=600&q=80" },
-  { category: "Fruits", name: "Apple Guava", img: "https://images.unsplash.com/photo-1533005849890-449e782626e2?w=600&q=80" },
-  { category: "Fruits", name: "Watermelon", img: "https://images.unsplash.com/photo-1589984662646-e7b2e4962f18?w=600&q=80" }
+  { category: "Fruits", name: "Sri Lankan Red Banana", img: "https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=600&q=80" },
+  { category: "Fruits", name: "Passion Fruit", img: "https://images.unsplash.com/photo-1534120247760-c44c3e4a62f1?w=600&q=80" },
+  { category: "Fruits", name: "Apple Guava", img: "https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=600&q=80" },
+  { category: "Fruits", name: "Watermelon", img: "https://images.unsplash.com/photo-1587049352847-81a56d773c1c?w=600&q=80" }
 ];
 
 const livestock = [
