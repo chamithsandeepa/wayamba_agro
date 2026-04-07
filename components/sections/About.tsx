@@ -21,35 +21,53 @@ export default function About() {
            </ScrollReveal>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
           
-          {/* Vision Block */}
-          <div className="lg:col-span-5 h-full">
-            <ScrollReveal direction="right" className="bg-emerald-50 rounded-[2rem] p-10 h-full flex flex-col justify-center relative overflow-hidden border border-emerald-100/50">
-               <div className="absolute top-0 right-0 p-8 opacity-10">
-                  <svg width="120" height="120" viewBox="0 0 24 24" fill="currentColor"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"></path></svg>
-               </div>
-               
-               <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-emerald-600 text-white mb-8 shadow-lg shadow-emerald-200">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-               </div>
-               
-               <h3 className="font-[family-name:var(--font-playfair)] font-bold text-3xl text-gray-900 mb-6 relative z-10">
-                  Our Vision
-               </h3>
-               <p className="font-[family-name:var(--font-dm-sans)] text-gray-700 text-lg leading-relaxed relative z-10 italic">
-                  "To redefine the landscape of Sri Lankan agriculture by becoming the premier model for agri-entrepreneurship, where unutilized land is transformed into high-performing commercial ecosystems that drive national economic growth."
-               </p>
-            </ScrollReveal>
+          {/* Staggered Visual Collage (Left side) */}
+          <div className="lg:col-span-6 grid grid-cols-2 gap-4 relative h-[600px]">
+             <ScrollReveal direction="right" className="relative h-[80%] rounded-[2rem] overflow-hidden shadow-2xl mt-8">
+                <Image 
+                  src="/Cultivated land(2).jpg" 
+                  alt="Wayamba farm expansion" 
+                  fill 
+                  className="object-cover"
+                />
+             </ScrollReveal>
+             <ScrollReveal direction="right" delay={0.2} className="relative h-[80%] rounded-[2rem] overflow-hidden shadow-2xl">
+                <Image 
+                  src="/Cultivated land(3).jpg" 
+                  alt="Wayamba plantation landscape" 
+                  fill 
+                  className="object-cover"
+                />
+             </ScrollReveal>
+             
+             {/* Circular badge */}
+             <motion.div 
+               initial={{ scale: 0, rotate: -20 }}
+               whileInView={{ scale: 1, rotate: 0 }}
+               viewport={{ once: true }}
+               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-emerald-600 text-white flex flex-col items-center justify-center text-center p-4 border-8 border-white shadow-xl z-10"
+             >
+                <span className="font-bold text-2xl">100%</span>
+                <span className="text-[10px] font-bold uppercase tracking-tighter">Sri Lankan Owned</span>
+             </motion.div>
           </div>
 
-          {/* Mission Block */}
-          <div className="lg:col-span-7 h-full">
-            <ScrollReveal direction="left" className="bg-white rounded-[2rem] p-10 h-full flex flex-col justify-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 relative">
-               <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gray-900 text-white mb-6">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v20"/><path d="m17 5-5-3-5 3"/><path d="m17 19-5 3-5-3"/><path d="M2 12h20"/><path d="m5 7 3 5-3 5"/><path d="m19 7-3 5 3 5"/></svg>
-               </div>
+          {/* Text blocks (Right side) */}
+          <div className="lg:col-span-6 space-y-10">
+            {/* Vision Block */}
+            <ScrollReveal direction="left" className="bg-emerald-50/50 rounded-[2rem] p-10 relative overflow-hidden border border-emerald-100/50">
+               <h3 className="font-[family-name:var(--font-playfair)] font-bold text-3xl text-gray-900 mb-4">
+                  Our Vision
+               </h3>
+               <p className="font-[family-name:var(--font-dm-sans)] text-gray-700 text-lg leading-relaxed italic">
+                  &quot;To redefine the landscape of Sri Lankan agriculture by becoming the premier model for agri-entrepreneurship, where unutilized land is transformed into high-performing commercial ecosystems that drive national economic growth.&quot;
+               </p>
+            </ScrollReveal>
 
+            {/* Mission Block */}
+            <ScrollReveal direction="left" delay={0.2} className="p-2">
                <h3 className="font-[family-name:var(--font-playfair)] font-bold text-3xl text-gray-900 mb-6">
                   Our Mission
                </h3>
@@ -61,7 +79,7 @@ export default function About() {
                      By offering both managed cultivation services for landowners and strategic land leasing for aspiring growers, we empower our partners to treat agricultural property as a profitable enterprise.
                   </p>
                   <p>
-                     Our focus remains on optimizing the entire value chain—from managing a diverse portfolio of high-value crops and livestock to ensuring operational integrity through transparent yield estimations and performance-based incentives that align our growth with the success of our partners.
+                     Our focus remains on optimizing the entire value chain—from managing a diverse portfolio of high-value crops and livestock...
                   </p>
                </div>
             </ScrollReveal>

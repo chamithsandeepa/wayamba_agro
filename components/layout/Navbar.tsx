@@ -61,12 +61,12 @@ export default function Navbar() {
               <div className="flex flex-col">
                 <span
                   className="font-[family-name:var(--font-playfair)] font-bold text-xl leading-tight"
-                  style={{ color: "var(--accent-green-deep)" }}
+                  style={{ color: "var(--accent-primary)" }}
                 >
                   Wayamba
                 </span>
                 <span
-                  className="font-[family-name:var(--font-dm-sans)] text-[9px] tracking-[0.2em] uppercase text-green-600"
+                  className="font-[family-name:var(--font-dm-sans)] text-[9px] tracking-[0.2em] uppercase text-emerald-800"
                 >
                   Corporation (PVT) LTD
                 </span>

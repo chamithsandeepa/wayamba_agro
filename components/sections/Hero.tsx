@@ -6,6 +6,22 @@ import Image from "next/image";
 import { ChevronDown } from "lucide-react";
 import AnimatedText from "@/components/ui/AnimatedText";
 
+// Move particle generation outside or use static values since Math.random is impure for React
+const STATIC_PARTICLES = [
+  { id: 0, left: "10%", bottom: "15%", duration: "10s", delay: "2s", size: "2px" },
+  { id: 1, left: "25%", bottom: "10%", duration: "14s", delay: "5s", size: "3px" },
+  { id: 2, left: "40%", bottom: "18%", duration: "12s", delay: "1s", size: "1.5px" },
+  { id: 3, left: "55%", bottom: "5%", duration: "18s", delay: "7s", size: "2.5px" },
+  { id: 4, left: "70%", bottom: "12%", duration: "15s", delay: "3s", size: "2px" },
+  { id: 5, left: "85%", bottom: "20%", duration: "13s", delay: "6s", size: "3px" },
+  { id: 6, left: "15%", bottom: "8%", duration: "16s", delay: "4s", size: "2px" },
+  { id: 7, left: "35%", bottom: "14%", duration: "11s", delay: "2s", size: "1.5px" },
+  { id: 8, left: "50%", bottom: "16%", duration: "17s", delay: "0s", size: "2.5px" },
+  { id: 9, left: "65%", bottom: "9%", duration: "14s", delay: "8s", size: "2px" },
+  { id: 10, left: "80%", bottom: "5%", duration: "12s", delay: "3s", size: "3px" },
+  { id: 11, left: "95%", bottom: "18%", duration: "15s", delay: "1s", size: "2px" },
+];
+
 export default function Hero() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -16,22 +32,13 @@ export default function Hero() {
   const contentOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const contentY = useTransform(scrollYProgress, [0, 0.5], [0, 60]);
 
-  const particles = Array.from({ length: 12 }, (_, i) => ({
-    id: i,
-    left: `${Math.random() * 100}%`,
-    bottom: `${Math.random() * 20}%`,
-    duration: `${8 + Math.random() * 12}s`,
-    delay: `${Math.random() * 8}s`,
-    size: `${1.5 + Math.random() * 1.5}px`,
-  }));
-
   return (
     <section ref={ref} className="relative min-h-screen w-full overflow-hidden">
       {/* Parallax background image */}
       <motion.div style={{ y: imageY }} className="absolute inset-0 -top-[15%] -bottom-[15%]">
         <Image
-          src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920&q=80"
-          alt="Lush green agricultural fields at sunrise"
+          src="/Cultivated land(1).jpg"
+          alt="Wayamba Corporation cultivated land at sunrise"
           fill
           className="object-cover"
           sizes="100vw"
@@ -50,7 +57,7 @@ export default function Hero() {
 
       {/* Floating particles */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {particles.map((p) => (
+        {STATIC_PARTICLES.map((p) => (
           <div
             key={p.id}
             className="particle"
@@ -79,8 +86,8 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <span className="badge badge-green font-[family-name:var(--font-dm-sans)]">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 inline-block" />
+              <span className="badge badge-green font-[family-name:var(--font-dm-sans)] border-[#8cb369] bg-[#8cb369]/10">
+                <span className="w-2 h-2 rounded-full bg-[#8cb369] inline-block" />
                 WAYAMBA CORPORATION (PVT) LTD
               </span>
             </motion.div>
@@ -90,7 +97,7 @@ export default function Hero() {
               <h1 className="font-[family-name:var(--font-playfair)] font-bold text-5xl md:text-6xl lg:text-7xl leading-[1.1] text-white">
                 <AnimatedText text="Professionalizing" delay={0.4} />
                 <br />
-                <span style={{ color: "var(--accent-primary)" }}>
+                <span style={{ color: "var(--accent-gold)" }}>
                   <AnimatedText text="Agriculture." delay={0.8} />
                 </span>
                 <br />
@@ -122,11 +129,9 @@ export default function Hero() {
                 style={{ backgroundColor: "var(--accent-primary)" }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.backgroundColor = "var(--accent-primary-dark)";
-                  e.currentTarget.style.boxShadow = "none";
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundColor = "var(--accent-primary)";
-                  e.currentTarget.style.boxShadow = "none";
                 }}
                 onClick={() => {
                   document.querySelector("#about")?.scrollIntoView({ behavior: "smooth" });

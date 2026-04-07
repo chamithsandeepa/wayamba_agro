@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 const pillars = [
@@ -8,16 +7,19 @@ const pillars = [
     num: "01",
     title: "Managed Cultivation Services",
     description: "We transform barren or uncultivated fields into productive assets. Our team manages the entire agricultural cycle for a professional service fee plus costs, turning idle land into a managed business venture.",
+    color: "var(--accent-maroon)",
   },
   {
     num: "02",
     title: "Strategic Land Leasing",
     description: "We provide the foundation for agri-entrepreneurship. Aspiring growers can rent our prepared, fertile lands to launch their own cultivations, supported by our existing infrastructure and irrigation systems.",
+    color: "var(--accent-gold)",
   },
   {
     num: "03",
     title: "Collaborative Sharecropping",
     description: "We believe in shared success. Through our sharecropping model, we partner with landowners to co-manage the cultivation process, sharing both the operational responsibilities and the final harvest rewards.",
+    color: "var(--accent-blue)",
   }
 ];
 
@@ -28,11 +30,14 @@ export default function Pillars() {
         
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 border-b border-emerald-200/50 pb-8 gap-6">
            <div className="max-w-2xl">
-             <span className="font-[family-name:var(--font-dm-sans)] text-emerald-600 font-bold tracking-widest text-sm uppercase mb-3 block">
+             <span 
+              className="font-[family-name:var(--font-dm-sans)] font-bold tracking-widest text-sm uppercase mb-3 block"
+              style={{ color: "var(--accent-primary)" }}
+             >
                COOPERATION
              </span>
              <h2 className="font-[family-name:var(--font-playfair)] font-bold text-4xl md:text-5xl text-gray-900">
-                Our Three <span className="text-emerald-600">Core Pillars</span>
+                Our Three <span style={{ color: "var(--accent-primary)" }}>Core Pillars</span>
              </h2>
            </div>
         </div>
@@ -51,7 +56,10 @@ export default function Pillars() {
                  </span>
                  
                  <div className="mb-8 relative z-10">
-                    <span className="inline-block px-4 py-1.5 bg-emerald-100 text-emerald-700 font-bold rounded-full text-sm mb-6">
+                    <span 
+                      className="inline-block px-4 py-1.5 font-bold rounded-full text-sm mb-6"
+                      style={{ backgroundColor: `${pillar.color}20`, color: pillar.color }}
+                    >
                        Model {pillar.num}
                     </span>
                     <h3 className="font-[family-name:var(--font-playfair)] font-bold text-2xl text-gray-900 mb-4 min-h-[64px]">
@@ -63,7 +71,10 @@ export default function Pillars() {
                  </div>
                  
                  {/* Bottom Accent line */}
-                 <div className="absolute bottom-0 left-0 h-1.5 bg-emerald-500 w-0 group-hover:w-full transition-all duration-500 ease-out z-20" />
+                 <div 
+                    className="absolute bottom-0 left-0 h-1.5 w-0 group-hover:w-full transition-all duration-500 ease-out z-20" 
+                    style={{ backgroundColor: pillar.color }}
+                 />
               </ScrollReveal>
            ))}
         </div>
