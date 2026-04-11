@@ -25,11 +25,24 @@ export default function Navbar() {
   const handleNavClick = (href: string) => {
     setMobileOpen(false);
     if (href === "#") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      if ((window as any).lenis) {
+        (window as any).lenis.scrollTo(0);
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
       return;
     }
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    
+    if ((window as any).lenis) {
+      (window as any).lenis.scrollTo(href, { offset: -80 });
+    } else {
+      const el = document.querySelector(href);
+      if (el) {
+        const yOffset = -80;
+        const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }
+    }
   };
 
   return (

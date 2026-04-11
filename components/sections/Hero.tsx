@@ -51,7 +51,7 @@ export default function Hero() {
       <div
         className="absolute inset-0"
         style={{
-          background: "linear-gradient(135deg, rgba(15,26,10,0.85) 0%, rgba(15,26,10,0.65) 50%, rgba(15,26,10,0.80) 100%)",
+          background: "linear-gradient(135deg, rgba(10,18,7,0.9) 0%, rgba(10,18,7,0.75) 50%, rgba(10,18,7,0.85) 100%)",
         }}
       />
 
@@ -78,7 +78,7 @@ export default function Hero() {
         style={{ opacity: contentOpacity, y: contentY }}
         className="relative z-10 min-h-screen flex items-center"
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full py-32">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full py-20 md:py-32">
           <div className="max-w-3xl">
             {/* Badge */}
             <motion.div
@@ -86,15 +86,15 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <span className="badge badge-green font-[family-name:var(--font-dm-sans)] border-[#8cb369] bg-[#8cb369]/10">
-                <span className="w-2 h-2 rounded-full bg-[#8cb369] inline-block" />
+              <span className="badge font-[family-name:var(--font-dm-sans)] border-white/20 bg-white/10 backdrop-blur-md text-white text-[10px] sm:text-xs tracking-[0.15em]">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block" />
                 WAYAMBA CORPORATION (PVT) LTD
               </span>
             </motion.div>
 
             {/* Headline */}
             <div className="mt-8 mb-8">
-              <h1 className="font-[family-name:var(--font-playfair)] font-bold text-5xl md:text-6xl lg:text-7xl leading-[1.1] text-white">
+              <h1 className="font-[family-name:var(--font-playfair)] font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] text-white">
                 <AnimatedText text="Professionalizing" delay={0.4} />
                 <br />
                 <span style={{ color: "var(--accent-gold)" }}>
@@ -111,7 +111,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 1.6 }}
-              className="font-[family-name:var(--font-dm-sans)] text-base md:text-lg leading-relaxed max-w-[620px] mb-10"
+              className="font-[family-name:var(--font-dm-sans)] text-sm md:text-lg leading-relaxed max-w-[620px] mb-10"
               style={{ color: "rgba(255,255,255,0.75)" }}
             >
               At Wayamba Corporation, we bridge the gap between land ownership and commercial success. We transform underutilized land into high-performing agricultural assets through precision management, modern infrastructure, and a commitment to agri-entrepreneurship.
